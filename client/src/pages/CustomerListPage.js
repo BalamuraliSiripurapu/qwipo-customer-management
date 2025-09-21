@@ -16,7 +16,7 @@ function CustomerListPage() {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/customers`, {
+      const response = await axios.get(`https://qwipo-customer-management-api.vercel.app/customers`, {
         params: {
           search: searchTerm,
           page: currentPage,
@@ -45,7 +45,7 @@ function CustomerListPage() {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/customers/${id}`);
+      await axios.delete(`https://qwipo-customer-management-api.vercel.app/customers/${id}`);
       alert('Customer deleted successfully');
       fetchCustomers();
     } catch (error) {
