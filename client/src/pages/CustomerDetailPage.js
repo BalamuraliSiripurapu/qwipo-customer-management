@@ -25,7 +25,7 @@ function CustomerDetailPage() {
 
   const fetchCustomerDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/customers/${id}`);
+      const response = await axios.get(`https://qwipo-customer-management-api.vercel.app/customers/${id}`);
       setCustomer(response.data.data);
     } catch (error) {
       console.error('Error fetching customer:', error);
@@ -35,7 +35,7 @@ function CustomerDetailPage() {
 
   const fetchAddresses = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/customers/${id}/addresses`);
+      const response = await axios.get(`https://qwipo-customer-management-api.vercel.app/customers/${id}/addresses`);
       setAddresses(response.data.data);
     } catch (error) {
       console.error('Error fetching addresses:', error);
@@ -51,7 +51,7 @@ function CustomerDetailPage() {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/customers/${id}`);
+      await axios.delete(`https://qwipo-customer-management-api.vercel.app/customers/${id}`);
       alert('Customer deleted successfully');
       navigate('/customers');
     } catch (error) {
@@ -107,7 +107,7 @@ function CustomerDetailPage() {
     }
     
     try {
-      await axios.post(`http://localhost:5000/api/customers/${id}/addresses`, addressForm);
+      await axios.post(`https://qwipo-customer-management-api.vercel.app/customers/${id}/addresses`, addressForm);
       alert('Address added successfully');
       setShowAddressForm(false);
       setAddressForm({
@@ -129,7 +129,7 @@ function CustomerDetailPage() {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/addresses/${addressId}`);
+      await axios.delete(`https://qwipo-customer-management-api.vercel.app/addresses/${addressId}`);
       alert('Address deleted successfully');
       fetchAddresses();
     } catch (error) {
