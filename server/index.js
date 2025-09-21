@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: [],
+  origin: ["https://qwipo-customer-management-frontend.vercel.app/"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   credentials: true
 }));
