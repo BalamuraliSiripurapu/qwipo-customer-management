@@ -23,7 +23,7 @@ function CustomerFormPage() {
 
   const fetchCustomer = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/customers/${id}`);
+      const response = await axios.get(`https://qwipo-customer-management-api.vercel.app/customers/${id}`);
       setFormData(response.data.data);
     } catch (error) {
       console.error('Error fetching customer:', error);
@@ -79,10 +79,10 @@ function CustomerFormPage() {
     
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5000/api/customers/${id}`, formData);
+        await axios.put(`https://qwipo-customer-management-api.vercel.app/customers/${id}`, formData);
         alert('Customer updated successfully');
       } else {
-        await axios.post('http://localhost:5000/api/customers', formData);
+        await axios.post('https://qwipo-customer-management-api.vercel.app/customers', formData);
         alert('Customer created successfully');
       }
       navigate('/customers');
